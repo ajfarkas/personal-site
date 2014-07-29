@@ -1,0 +1,339 @@
+/*CSS for portfolio site, Mobile first, Sass*/
+
+@import "variables.scss";
+@import "mixins.scss";
+@import "resets.scss";
+
+.left{ 
+	float: left; 
+	text-align: left;
+}
+.right{ 
+	float: right; 
+	text-align: right;
+}/*style of titles within text*/
+.title{ font-style: italic; }
+a.active{ color: $active; }
+
+h1{ /*Title*/
+	float: left;
+	@include font1(36px, 800);
+	padding: {
+		left: 5px;
+		right: 5px;
+		bottom: 2px;
+	} 
+	margin-top: 5px;
+	line-height: 40px;
+	@include responsive(desktop){ 
+		@include font1(44px, 800);
+		padding: {
+			left: 10px;
+			right: 10px;
+			bottom: 4px;
+		} 
+		line-height: 55px;
+	}
+}
+	#splash h1{
+		float: none;
+		margin-top: 5px;
+		text-shadow: 0 0 50px #666;
+		@include responsive(desktop){ 
+			margin-top: 10px; 
+			line-height: 80px;
+			font-size: 72px;
+			float: left;
+			clear: left;
+		}
+	}
+
+h2{ /*description*/
+	float: left;
+	top: -7px;
+	left: 5px;
+	@include font1(16px, 300);
+	@include responsive(landscape){ 
+		top: 5px; 
+		left: 0;
+		width: 95px;
+		line-height: 18px;
+	}
+	@include responsive(desktop){ 
+		@include font1(22px, 300);
+		top: 6px;
+		left: 0;
+	}
+	font-style: italic;
+	position: relative;
+}
+	#splash h2{
+		float: none;
+		top: -4px;
+		left: 5px;
+		text-shadow: 0 0 50px #666; 
+		@include responsive(desktop){
+			font-size: 30px;
+			top: -8px;
+			left: 10px;
+		}
+	}
+
+h3{
+	@include font1(32px, 800);
+}	
+
+h4{
+	@include font1(24px, 400);
+}
+
+h6{ /*footer*/
+	@include font1(13px, 300);
+	color: $f2-color;
+}
+#splash footer h6{ color: $footer-color; }
+
+body{ 
+	background-color: $body-color; 
+	overflow-x: hidden;
+	@include responsive(desktop){ 
+		overflow-x: initial;
+		min-width: $width-deskmin; 
+	}
+}
+body#work{ /*portfolio pages*/	}
+body#splash{ /*Index page*/
+	@include background;
+	background-image: url(bgimages/mobilesplash.jpg); /*portrait HD mobile and tablets*/
+	background-size: auto 100%;
+	@include responsive(landscape){ background-size: 100% auto; }
+	@include responsive(desktop){
+		background-image: url(bgimages/desktopsplash.jpg); /*desktop and landscape tablets*/
+		background-size: auto 140%;
+	}
+}
+
+#wrapper{
+	overflow-x: hidden;
+}
+
+header, nav, footer{ 
+	position: relative;
+	min-height: 20px;
+	z-index: 10;
+	@include edges($tablet-mp);
+	@include responsive(desktop){ @include edges($desktop-mp); }
+}
+
+header{	
+	margin-left: 0; 
+	background-color: $fontbg;
+	width: 100%;
+}
+#splash header{ 
+	background-color: initial; 
+	width: initial;
+}
+	header h1 a:hover{ color: $f1-color - #333; }
+	
+	header #social{ 
+		display: none; 
+		text-align: right;
+		padding-top: 8px;
+		font-size: 22px;
+	}
+
+#hamburger{
+	z-index: 99;
+	position: absolute;
+	top: 0;
+	right: 13px;
+	color: $active;
+	text-shadow: 0 0 1px #666; 
+	font-size: 32px;
+	@include responsive(landscape){ display: none; }
+	@include responsive(desktop){ display: none; }
+}
+
+#contentLayer{ 
+	display: none; 
+	z-index: 9;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+}
+
+nav#side{
+	/*for mobile nav*/
+	z-index: 1;
+	position: fixed;
+	left: -50%;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	/*other*/
+	padding:{
+		top: 86px;
+		bottom: 40px;
+	}
+	@include responsive(landscape){ 
+		display: block;
+		position: initial;
+		padding-top: 15px;
+		width: 180px;
+	}
+	@include responsive(desktop){
+		display: block;
+		position: initial;
+		padding-top: 20px;
+		width: 240px;
+	}
+}
+	nav a{ @include transition(padding-left, 0.5s, ease); }
+	nav a:hover{ 
+		padding-left: 15px;
+		@include transition(padding-left, 0.5s, ease);
+	}
+#splash nav#side{	
+	z-index: 10;
+	display: block;
+	position: initial;
+	padding-top: 30px;
+	width: 260px;
+	@include responsive(landscape){ padding-top: 15px; }
+	}	
+	nav#side ul li{ /*navigation*/
+		padding: {
+			top: 3px;
+			right: 5px;
+			bottom: 3px;
+			left: 5px;
+		} 
+		margin-bottom: 15px;
+		@include font1(16, 400);
+		@include label;
+		@include responsive(landscape){ margin-bottom: 5px; }
+		@include responsive(desktop){ 
+			padding: {
+				right: 10px;
+				left: 10px;
+			}
+			font-size: 18px; 
+		}
+	}
+	#splash nav#side ul li{ /*Index page navigation*/
+		@include responsive(desktop){ font-size: 24px; }
+	}
+
+#display{
+	margin-top: 15px;
+	@include responsive(landscape){ width: 70%; }
+	@include responsive(desktop){ 
+		margin-top: 20px; 
+		width: initial;
+	}
+	@include responsive(smallHD){ width: 62%; }
+}
+	#display img{ 
+		width: 90%;
+		margin-left: 5%;
+		@include responsive(landscape){ 
+			margin-left: inherit;
+		}
+		@include responsive(desktop){
+			max-height: $folio-image;
+			width: auto;
+			margin-left: inherit;
+		}
+	}
+	#display h6{
+		@include responsive(landscape){ margin-left: inherit; }
+		@include responsive(desktop){ 
+			margin-left: inherit; 
+		}
+	}
+	.text{
+		width: 70%;
+		padding-left: 5%;
+		@include responsive(landscape){ 
+			width: 73%;
+			padding-left: initial; 
+		}
+		@include responsive(desktop){ padding-left: initial; }
+		@include responsive(smallHD){ width: 65%; }
+	}
+	.imgnav{ 
+		width: 24%;
+		text-align: right;
+		@include responsive(landscape){
+			width: 17%; 
+			padding-right: inherit;
+			text-align: inherit;
+		}
+		@include responsive(desktop){ 
+			width: 30%;
+			padding-right: inherit;
+		}
+		@include responsive(smallHD){ width: 25%; }
+	}
+	.imgnav a:hover .fa{ 
+		text-shadow: 1px 0 0 yellow,
+								 0 1px 0 yellow,
+								 -1px 0 0 yellow,
+								 0 -1px 0 yellow; 
+	}
+	
+	#display .fa{ /*image nav*/
+		color: $fontbg;
+		font-size: 32px;
+	}
+
+#display.bodytext{
+	color: $f2-color;
+	padding-bottom: 160px;
+	@include edges($tablet-mp);
+	@include responsive(desktop){
+		width: 430px;
+		margin:{
+			top: 13px;
+			left: 32px;
+			right: inherit;
+		}
+	}
+}
+	.bodytext .left{ width: 50%; }
+	.bodytext a{ color: $f2-color; }	
+	.bodytext ul li{ 
+		background-color: $fontbg2; 
+		margin-top: 5px;
+		float: left;
+		clear: left;
+	}
+		.bodytext ul li:hover{ background-color: rgba($fontbg2,0.3); }
+
+footer{
+	background-color: $body-color;
+}
+#splash footer{	
+	text-align: right; 
+	background-color: $bg-color;
+}
+footer a{ color: $f2-color; }
+footer h6{ padding-top: 10px; }
+footer .right{ 
+	display: none;
+	@include responsive(landscape){ display: block; }
+	@include responsive(desktop){ display: block; }
+}
+footer.site .right{ 
+	display: block; 
+	float: left;
+	@include responsive(landscape){ float: right; }
+	@include responsive(desktop){ float: right; }
+}
+
+

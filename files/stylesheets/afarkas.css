@@ -1,0 +1,437 @@
+/*CSS for portfolio site, Mobile first, Sass*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*sticky footer*/
+html, body {
+  height: 100%; }
+
+#wrapper {
+  min-height: 100%;
+  /*height is for IE compatibility*/
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px; }
+
+footer, .push {
+  height: 40px; }
+
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: white;
+  z-index: 10; }
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
+.clear {
+  clear: both; }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit; }
+
+a.underline, .underline {
+  text-decoration: underline; }
+
+ul {
+  list-style-type: none; }
+
+.left {
+  float: left;
+  text-align: left; }
+
+.right {
+  float: right;
+  text-align: right; }
+
+/*style of titles within text*/
+.title {
+  font-style: italic; }
+
+a.active {
+  color: yellow; }
+
+h1 {
+  /*Title*/
+  float: left;
+  font-size: 36px;
+  font-weight: 800;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+  margin-top: 5px;
+  line-height: 40px; }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    h1 {
+      font-size: 44px;
+      font-weight: 800;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 4px;
+      line-height: 55px; } }
+
+#splash h1 {
+  float: none;
+  margin-top: 5px;
+  text-shadow: 0 0 50px #666; }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #splash h1 {
+      margin-top: 10px;
+      line-height: 80px;
+      font-size: 72px;
+      float: left;
+      clear: left; } }
+
+h2 {
+  /*description*/
+  float: left;
+  top: -7px;
+  left: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  position: relative; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    h2 {
+      top: 5px;
+      left: 0;
+      width: 95px;
+      line-height: 18px; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    h2 {
+      font-size: 22px;
+      font-weight: 300;
+      top: 6px;
+      left: 0; } }
+
+#splash h2 {
+  float: none;
+  top: -4px;
+  left: 5px;
+  text-shadow: 0 0 50px #666; }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #splash h2 {
+      font-size: 30px;
+      top: -8px;
+      left: 10px; } }
+
+h3 {
+  font-size: 32px;
+  font-weight: 800; }
+
+h4 {
+  font-size: 24px;
+  font-weight: 400; }
+
+h6 {
+  /*footer*/
+  font-size: 13px;
+  font-weight: 300;
+  color: #666666; }
+
+#splash footer h6 {
+  color: #333333; }
+
+body {
+  background-color: #e6e6e6;
+  overflow-x: hidden; }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    body {
+      overflow-x: initial;
+      min-width: 900px; } }
+
+body#work {
+  /*portfolio pages*/ }
+
+body#splash {
+  /*Index page*/
+  background-size: 153% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url(bgimages/mobilesplash.jpg);
+  /*portrait HD mobile and tablets*/
+  background-size: auto 100%; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    body#splash {
+      background-size: 100% auto; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    body#splash {
+      background-image: url(bgimages/desktopsplash.jpg);
+      /*desktop and landscape tablets*/
+      background-size: auto 140%; } }
+
+#wrapper {
+  overflow-x: hidden; }
+
+header, nav, footer {
+  position: relative;
+  min-height: 20px;
+  z-index: 10;
+  /*site-wide margins and padding*/
+  padding-left: 10px;
+  padding-right: 10px; }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    header, nav, footer {
+      /*site-wide margins and padding*/
+      padding-left: 20px;
+      padding-right: 20px; } }
+
+header {
+  margin-left: 0;
+  background-color: #666666;
+  width: 100%; }
+
+#splash header {
+  background-color: initial;
+  width: initial; }
+
+header h1 a:hover {
+  color: #cccccc; }
+
+header #social {
+  display: none;
+  text-align: right;
+  padding-top: 8px;
+  font-size: 22px; }
+
+#hamburger {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  right: 13px;
+  color: yellow;
+  text-shadow: 0 0 1px #666;
+  font-size: 32px; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    #hamburger {
+      display: none; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #hamburger {
+      display: none; } }
+
+#contentLayer {
+  display: none;
+  z-index: 9;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%; }
+
+nav#side {
+  /*for mobile nav*/
+  z-index: 1;
+  position: fixed;
+  left: -50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  /*other*/
+  padding-top: 86px;
+  padding-bottom: 40px; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    nav#side {
+      display: block;
+      position: initial;
+      padding-top: 15px;
+      width: 180px; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    nav#side {
+      display: block;
+      position: initial;
+      padding-top: 20px;
+      width: 240px; } }
+
+nav a {
+  -webkit-transition: padding-left 0.5s ease;
+  -moz-transition: padding-left 0.5s ease;
+  -o-transition: padding-left 0.5s ease;
+  transition: padding-left 0.5s ease; }
+
+nav a:hover {
+  padding-left: 15px;
+  -webkit-transition: padding-left 0.5s ease;
+  -moz-transition: padding-left 0.5s ease;
+  -o-transition: padding-left 0.5s ease;
+  transition: padding-left 0.5s ease; }
+
+#splash nav#side {
+  z-index: 10;
+  display: block;
+  position: initial;
+  padding-top: 30px;
+  width: 260px; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    #splash nav#side {
+      padding-top: 15px; } }
+
+nav#side ul li {
+  /*navigation*/
+  padding-top: 3px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  margin-bottom: 15px;
+  font-size: 16;
+  font-weight: 400;
+  float: left;
+  clear: left;
+  background-color: #666666; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    nav#side ul li {
+      margin-bottom: 5px; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    nav#side ul li {
+      padding-right: 10px;
+      padding-left: 10px;
+      font-size: 18px; } }
+
+#splash nav#side ul li {
+  /*Index page navigation*/ }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #splash nav#side ul li {
+      font-size: 24px; } }
+
+#display {
+  margin-top: 15px; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    #display {
+      width: 70%; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #display {
+      margin-top: 20px;
+      width: initial; } }
+  @media only screen and (max-device-width: 640px) and (-webkit-max-device-pixel-ratio: 2) and (orientation: landscape), only screen and (max-device-width: 640px) and (max-resolution: 192dpi) and (orientation: landscape) {
+    #display {
+      width: 62%; } }
+
+#display img {
+  width: 90%;
+  margin-left: 5%; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    #display img {
+      margin-left: inherit; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #display img {
+      max-height: 600px;
+      width: auto;
+      margin-left: inherit; } }
+
+@media only screen and (max-device-width: 640px) and (orientation: landscape) {
+  #display h6 {
+    margin-left: inherit; } }
+@media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+  #display h6 {
+    margin-left: inherit; } }
+
+.text {
+  width: 70%;
+  padding-left: 5%; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    .text {
+      width: 73%;
+      padding-left: initial; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    .text {
+      padding-left: initial; } }
+  @media only screen and (max-device-width: 640px) and (-webkit-max-device-pixel-ratio: 2) and (orientation: landscape), only screen and (max-device-width: 640px) and (max-resolution: 192dpi) and (orientation: landscape) {
+    .text {
+      width: 65%; } }
+
+.imgnav {
+  width: 24%;
+  text-align: right; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    .imgnav {
+      width: 17%;
+      padding-right: inherit;
+      text-align: inherit; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    .imgnav {
+      width: 30%;
+      padding-right: inherit; } }
+  @media only screen and (max-device-width: 640px) and (-webkit-max-device-pixel-ratio: 2) and (orientation: landscape), only screen and (max-device-width: 640px) and (max-resolution: 192dpi) and (orientation: landscape) {
+    .imgnav {
+      width: 25%; } }
+
+.imgnav a:hover .fa {
+  text-shadow: 1px 0 0 yellow, 0 1px 0 yellow, -1px 0 0 yellow, 0 -1px 0 yellow; }
+
+#display .fa {
+  /*image nav*/
+  color: #666666;
+  font-size: 32px; }
+
+#display.bodytext {
+  color: #666666;
+  padding-bottom: 160px;
+  /*site-wide margins and padding*/
+  padding-left: 10px;
+  padding-right: 10px; }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    #display.bodytext {
+      width: 430px;
+      margin-top: 13px;
+      margin-left: 32px;
+      margin-right: inherit; } }
+
+.bodytext .left {
+  width: 50%; }
+
+.bodytext a {
+  color: #666666; }
+
+.bodytext ul li {
+  background-color: rgba(255, 255, 0, 0.05);
+  margin-top: 5px;
+  float: left;
+  clear: left; }
+
+.bodytext ul li:hover {
+  background-color: rgba(255, 255, 0, 0.3); }
+
+footer {
+  background-color: #e6e6e6; }
+
+#splash footer {
+  text-align: right;
+  background-color: rgba(255, 255, 255, 0.6); }
+
+footer a {
+  color: #666666; }
+
+footer h6 {
+  padding-top: 10px; }
+
+footer .right {
+  display: none; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    footer .right {
+      display: block; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    footer .right {
+      display: block; } }
+
+footer.site .right {
+  display: block;
+  float: left; }
+  @media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    footer.site .right {
+      float: right; } }
+  @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
+    footer.site .right {
+      float: right; } }

@@ -1,0 +1,36 @@
+//Variables for afarkas.scss
+
+//fonts
+$font-primary: "Open Sans", Helvetica, sans-serif;
+$font-secondary: "Open Sans", Helvetica, sans-serif;
+$f1-color: #fff; //primary site font color
+$f2-color: #666; //secondary site font color
+$footer-color: #333; //color of the footer font
+$fontbg: #666; //color of the font background
+$fontbg2: rgba(255,255,0,0.05);
+$active: #ff0; //color of the active link 
+
+//media queries
+$width-mobile: 640px;
+$width-tablet: 800px;
+$width-desktop: 1200px;
+
+$width-deskmin: 900px; //min-width of desktop site
+
+//background
+$body-color: #e6e6e6;
+$bg-color: rgba(255,255,255,0.6); //element background color
+
+//default margin/padding
+$tablet-mp: 10px;
+$desktop-mp: 20px;
+
+//images
+$img-width: 1200px; //desktop splash info
+$img-height: 896px; //desktop splash info
+$bg-height: (($width-tablet + 2)/$img-width)*$img-height; //to calculate window size
+
+$folio-image: 600px; //desktop portfolio image size
+
+//footer 
+$footer-height: 40px;

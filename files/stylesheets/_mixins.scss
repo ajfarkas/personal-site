@@ -1,0 +1,75 @@
+//standard mixins
+
+//--borders-----------------------------------------------
+
+@mixin edges($distance){
+	/*site-wide margins and padding*/
+	padding:{
+		 left: $distance;
+		right: $distance;
+	} 
+}
+
+//--text--------------------------------------------------
+
+@mixin font1($fsize, $fweight) {
+	font:{
+		size: $fsize;
+		weight: $fweight;
+	}
+}
+
+@mixin label {
+	float: left;
+	clear: left;
+	background-color: $fontbg; 
+}
+
+//--images------------------------------------------------
+
+@mixin background {
+	background: {
+		size: 153% auto;
+		repeat: no-repeat;
+		position: center top;
+	}
+}
+
+//--attributes--------------------------------------------
+@mixin box-sizing($box) {
+	-webkit-box-sizing: $box;
+		 -moz-box-sizing: $box;
+					box-sizing: $box;
+}
+
+@mixin box-shadow($boxX, $boxY, $blur, $spread, $color, $set: outset) {
+	-webkit-box-shadow: $set $boxX $boxY $blur $spread $color;
+		 -moz-box-shadow: $set $boxX $boxY $blur $spread $color;
+					box-shadow: $set $boxX $boxY $blur $spread $color;
+}
+
+@mixin transition($property, $duration, $timing) {
+  -webkit-transition: $property $duration $timing;
+     -moz-transition: $property $duration $timing;
+       -o-transition: $property $duration $timing;
+          transition: $property $duration $timing;
+}
+
+//--responsive-------------------------------------------
+
+@mixin responsive($width){
+	@if $width == landscape {
+		@media only screen and (max-device-width: $width-mobile) and (orientation: landscape) {@content;}
+	}
+	@else if $width == desktop {
+		@media only screen and (min-device-width: $width-tablet + 1), only screen and (min-device-width: $width-mobile +1) and (max-device-width: $width-tablet + 1) and (orientation: landscape) {@content;}
+	}
+	@elseif $width == smallHD {
+		@media only screen and (max-device-width: $width-mobile) and (-webkit-max-device-pixel-ratio: 2) and (orientation: landscape),
+					 only screen and (max-device-width: $width-mobile) and (max-resolution: 192dpi) and (orientation: landscape) {@content;}
+	}
+}
+
+//--functions--------------------------------------------
+
+
