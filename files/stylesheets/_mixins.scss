@@ -12,11 +12,14 @@
 
 //--text--------------------------------------------------
 
+@mixin font-size($fsize) {
+	font-size: #{$fsize}px;
+	font-size: rem($fsize);
+}
+
 @mixin font1($fsize, $fweight) {
-	font:{
-		size: $fsize;
-		weight: $fweight;
-	}
+	@include font-size($fsize);
+	font-weight: $fweight;
 }
 
 @mixin label {
@@ -72,4 +75,7 @@
 
 //--functions--------------------------------------------
 
+@function rem($fsize) {
+	@return #{$fsize / 10}rem;
+}
 

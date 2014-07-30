@@ -21,6 +21,10 @@ html, body {
 footer, .push {
   height: 40px; }
 
+/*-----*/
+html {
+  font-size: 62.5%; }
+
 body {
   font-family: "Open Sans", Helvetica, sans-serif;
   color: white;
@@ -67,6 +71,7 @@ h1 {
   /*Title*/
   float: left;
   font-size: 36px;
+  font-size: 3.6rem;
   font-weight: 800;
   padding-left: 5px;
   padding-right: 5px;
@@ -76,6 +81,7 @@ h1 {
   @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
     h1 {
       font-size: 44px;
+      font-size: 4.4rem;
       font-weight: 800;
       padding-left: 10px;
       padding-right: 10px;
@@ -91,6 +97,7 @@ h1 {
       margin-top: 10px;
       line-height: 80px;
       font-size: 72px;
+      font-size: 7.2rem;
       float: left;
       clear: left; } }
 
@@ -100,6 +107,7 @@ h2 {
   top: -7px;
   left: 5px;
   font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 300;
   font-style: italic;
   position: relative; }
@@ -112,6 +120,7 @@ h2 {
   @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
     h2 {
       font-size: 22px;
+      font-size: 2.2rem;
       font-weight: 300;
       top: 6px;
       left: 0; } }
@@ -124,20 +133,24 @@ h2 {
   @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
     #splash h2 {
       font-size: 30px;
+      font-size: 3rem;
       top: -8px;
       left: 10px; } }
 
 h3 {
   font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 800; }
 
 h4 {
   font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 400; }
 
 h6 {
   /*footer*/
   font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 300;
   color: #666666; }
 
@@ -204,7 +217,8 @@ header #social {
   display: none;
   text-align: right;
   padding-top: 8px;
-  font-size: 22px; }
+  font-size: 22px;
+  font-size: 2.2rem; }
 
 #hamburger {
   z-index: 99;
@@ -213,7 +227,8 @@ header #social {
   right: 13px;
   color: yellow;
   text-shadow: 0 0 1px #666;
-  font-size: 32px; }
+  font-size: 32px;
+  font-size: 3.2rem; }
   @media only screen and (max-device-width: 640px) and (orientation: landscape) {
     #hamburger {
       display: none; } }
@@ -286,7 +301,8 @@ nav#side ul li {
   padding-bottom: 3px;
   padding-left: 5px;
   margin-bottom: 15px;
-  font-size: 16;
+  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
   float: left;
   clear: left;
@@ -298,13 +314,15 @@ nav#side ul li {
     nav#side ul li {
       padding-right: 10px;
       padding-left: 10px;
-      font-size: 18px; } }
+      font-size: 18px;
+      font-size: 1.8rem; } }
 
 #splash nav#side ul li {
   /*Index page navigation*/ }
   @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
     #splash nav#side ul li {
-      font-size: 24px; } }
+      font-size: 24px;
+      font-size: 2.4rem; } }
 
 #display {
   margin-top: 15px; }
@@ -374,7 +392,8 @@ nav#side ul li {
 #display .fa {
   /*image nav*/
   color: #666666;
-  font-size: 32px; }
+  font-size: 32px;
+  font-size: 3.2rem; }
 
 #display.bodytext {
   color: #666666;

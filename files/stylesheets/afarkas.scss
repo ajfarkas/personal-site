@@ -17,7 +17,7 @@ a.active{ color: $active; }
 
 h1{ /*Title*/
 	float: left;
-	@include font1(36px, 800);
+	@include font1(36, 800);
 	padding: {
 		left: 5px;
 		right: 5px;
@@ -26,7 +26,7 @@ h1{ /*Title*/
 	margin-top: 5px;
 	line-height: 40px;
 	@include responsive(desktop){ 
-		@include font1(44px, 800);
+		@include font1(44, 800);
 		padding: {
 			left: 10px;
 			right: 10px;
@@ -42,7 +42,7 @@ h1{ /*Title*/
 		@include responsive(desktop){ 
 			margin-top: 10px; 
 			line-height: 80px;
-			font-size: 72px;
+			@include font-size(72);
 			float: left;
 			clear: left;
 		}
@@ -52,7 +52,7 @@ h2{ /*description*/
 	float: left;
 	top: -7px;
 	left: 5px;
-	@include font1(16px, 300);
+	@include font1(16, 300);
 	@include responsive(landscape){ 
 		top: 5px; 
 		left: 0;
@@ -60,7 +60,7 @@ h2{ /*description*/
 		line-height: 18px;
 	}
 	@include responsive(desktop){ 
-		@include font1(22px, 300);
+		@include font1(22, 300);
 		top: 6px;
 		left: 0;
 	}
@@ -73,22 +73,22 @@ h2{ /*description*/
 		left: 5px;
 		text-shadow: 0 0 50px #666; 
 		@include responsive(desktop){
-			font-size: 30px;
+			@include font-size(30);
 			top: -8px;
 			left: 10px;
 		}
 	}
 
 h3{
-	@include font1(32px, 800);
+	@include font1(32, 800);
 }	
 
 h4{
-	@include font1(24px, 400);
+	@include font1(24, 400);
 }
 
 h6{ /*footer*/
-	@include font1(13px, 300);
+	@include font1(13, 300);
 	color: $f2-color;
 }
 #splash footer h6{ color: $footer-color; }
@@ -140,7 +140,7 @@ header{
 		display: none; 
 		text-align: right;
 		padding-top: 8px;
-		font-size: 22px;
+		@include font-size(22);
 	}
 
 #hamburger{
@@ -150,7 +150,7 @@ header{
 	right: 13px;
 	color: $active;
 	text-shadow: 0 0 1px #666; 
-	font-size: 32px;
+	@include font-size(32);
 	@include responsive(landscape){ display: none; }
 	@include responsive(desktop){ display: none; }
 }
@@ -222,11 +222,11 @@ nav#side{
 				right: 10px;
 				left: 10px;
 			}
-			font-size: 18px; 
+			@include font-size(18); 
 		}
 	}
 	#splash nav#side ul li{ /*Index page navigation*/
-		@include responsive(desktop){ font-size: 24px; }
+		@include responsive(desktop){ @include font-size(24); }
 	}
 
 #display{
@@ -289,7 +289,7 @@ nav#side{
 	
 	#display .fa{ /*image nav*/
 		color: $fontbg;
-		font-size: 32px;
+		@include font-size(32);
 	}
 
 #display.bodytext{

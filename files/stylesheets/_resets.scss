@@ -19,6 +19,9 @@ html, body{ height: 100%; }
 footer, .push{
 	height: $footer-height;
 }
+/*-----*/
+
+html{ font-size: 62.5%; }
 
 body{ 
 	font-family: $font-primary;
