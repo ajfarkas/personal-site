@@ -250,6 +250,7 @@ header #social {
 nav#side {
   /*for mobile nav*/
   z-index: 1;
+  display: none;
   position: fixed;
   left: -50%;
   top: 0;
@@ -257,19 +258,24 @@ nav#side {
   height: 100%;
   /*other*/
   padding-top: 86px;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  -webkit-box-shadow: 0 0 195px 25px #333333;
+  -moz-box-shadow: 0 0 195px 25px #333333;
+  box-shadow: 0 0 195px 25px #333333; }
   @media only screen and (max-device-width: 640px) and (orientation: landscape) {
     nav#side {
       display: block;
       position: initial;
       padding-top: 15px;
-      width: 180px; } }
+      width: 180px;
+      box-shadow: none; } }
   @media only screen and (min-device-width: 801px), only screen and (min-device-width: 641px) and (max-device-width: 801px) and (orientation: landscape) {
     nav#side {
       display: block;
       position: initial;
       padding-top: 20px;
-      width: 240px; } }
+      width: 240px;
+      box-shadow: none; } }
 
 nav a {
   -webkit-transition: padding-left 0.5s ease;
