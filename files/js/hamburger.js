@@ -18,7 +18,7 @@ $(document).ready(function() {
         $('#hamburger').css('display', 'none');
         $('#side').fadeIn(350, 'linear');
         //disable scrolling on mobile devices while menu is shown
-        $('#display').bind('touchmove', function(e){e.preventDefault()});
+        $('#display').bind('touchmove', function(e){e.preventDefault();});
 
         //animate the main section and menu to slide in from the left
         $('#side').animate({'left': '0'}, 700, 'linear');
