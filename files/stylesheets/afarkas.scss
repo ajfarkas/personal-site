@@ -170,6 +170,7 @@ header{
 nav#side{
 	/*for mobile nav*/
 	z-index: 1;
+	display: none;
 	position: fixed;
 	left: -50%;
 	top: 0;
@@ -180,17 +181,20 @@ nav#side{
 		top: 86px;
 		bottom: 40px;
 	}
+	@include box-shadow(0, 0, 195px, 25px, #333);
 	@include responsive(landscape){ 
 		display: block;
 		position: initial;
 		padding-top: 15px;
 		width: 180px;
+		box-shadow: none;
 	}
 	@include responsive(desktop){
 		display: block;
 		position: initial;
 		padding-top: 20px;
 		width: 240px;
+		box-shadow: none;
 	}
 }
 	nav a{ @include transition(padding-left, 0.5s, ease); }
