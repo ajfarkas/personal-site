@@ -1,73 +1,43 @@
-/**
- * hamburger.js
- *
- * Mobile Menu Hamburger
- * =====================
- * A hamburger menu for mobile websites
- *
- * Created by Thomas Zinnbauer YMC AG  |  http://www.ymc.ch
- * Date: 21.05.13
- *
- * Modifications by AJ Farkas 2014
+/*Mobile hamburger menu
+ * AJ Farkas 2014
+ * Thanks to Thomas Zinnbauer YMC AG  |  http://www.ymc.ch 
  */
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
 
     //Open the menu
-    jQuery('#hamburger').click(function() {
+    $('#hamburger').click(function() {
+        //set the width of the main section
+        var contentWidth = $('#display').width();
 
-        //set the width of primary content container -> content should not scale while animating
-        var contentWidth = jQuery('#display').width();
+        //give the main section a numerical width
+        $('#display').css('width', contentWidth);
 
-        //set the content with the width that it has originally
-        jQuery('#display').css('width', contentWidth);
+        //create overlay to disable action on main section while menu visible & hide hamburger
+        $('#contentLayer').css('display', 'block');
+        $('#hamburger').css('display', 'none');
+        $('#side').fadeIn(350, 'linear');
+        //disable scrolling on mobile devices while menu is shown
+        $('#display').bind('touchmove', function(e){e.preventDefault()});
 
-        //display a layer to disable clicking and scrolling on the content while menu is shown
-        jQuery('#contentLayer').css('display', 'block');
-        jQuery('#hamburger').css('display', 'none');
-        jQuery('#side').css({
-            'box-shadow': '0 0 195px 25px #333',
-            '-moz-box-shadow': '0 0 195px 25px #333',
-            '-webkit-box-shadow': '0 0 195px 25px #333'
-        });
-        //disable all scrolling on mobile devices while menu is shown
-        jQuery('#display').bind('touchmove', function(e){e.preventDefault()});
-
-        //set margin for the whole container with a jquery UI animation
-        jQuery('#side').animate({'left': ['0', 'easeOutExpo']}, {
-            duration: 700
-        });
-        jQuery('#display').animate({'marginLeft': ['50%', 'easeOutExpo']}, {
-            duration: 700
-        });
-
+        //animate the main section and menu to slide in from the left
+        $('#side').animate({'left': '0'}, 700, 'linear');
+        $('#display').animate({'marginLeft': '50%'}, 700, 'linear');
     });
 
     //close the menu
-    jQuery('#contentLayer').click(function() {
+    $('#contentLayer').click(function() {
+        //show the hamburger and enable scrolling
+        $('#hamburger').css('display', 'block');
+        $('#display').unbind('touchmove');
 
-        //hide menu
-        jQuery('#hamburger').css('display', 'block');
-        //enable all scrolling on mobile devices when menu is closed
-        jQuery('#display').unbind('touchmove');
-
-        //set margin for the whole container back to original state with a jquery UI animation
-        jQuery('#side').animate({'left': ['-50%', 'easeOutExpo']}, {
-            duration: 700
+        //animate the main section and menu to return to the left and hide overlay
+        $('#side').animate({'left': '-50%'}, 700, 'linear');
+        $('#side').fadeOut(350, 'linear');
+        $('#display').animate({'marginLeft': '0'}, 700, 'linear', function() {
+            $('#display').css('width', 'auto');
+            $('#contentLayer').css('display', 'none');
         });
-        jQuery('#display').animate({'marginLeft': ['0', 'easeOutExpo']}, {
-            duration: 700,
-            complete: function() {
-                jQuery('#display').css('width', 'auto');
-                jQuery('#contentLayer').css('display', 'none');
-                jQuery('#side').css({
-                    'box-shadow': 'none',
-                    '-moz-box-shadow': 'none',
-                    '-webkit-box-shadow': 'none' 
-                });
 
-            }
-        });
     });
-
 });
