@@ -45,10 +45,10 @@
 					box-sizing: $box;
 }
 
-@mixin box-shadow($boxX, $boxY, $blur, $spread, $color, $set: outset) {
-	-webkit-box-shadow: $set $boxX $boxY $blur $spread $color;
-		 -moz-box-shadow: $set $boxX $boxY $blur $spread $color;
-					box-shadow: $set $boxX $boxY $blur $spread $color;
+@mixin box-shadow($boxX, $boxY, $blur, $spread, $color) {
+	-webkit-box-shadow: $boxX $boxY $blur $spread $color;
+		 -moz-box-shadow: $boxX $boxY $blur $spread $color;
+					box-shadow: $boxX $boxY $blur $spread $color;
 }
 
 @mixin transition($property, $duration, $timing) {
